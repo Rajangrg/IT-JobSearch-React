@@ -1,6 +1,6 @@
 import React from "react";
 //container
-import {Home} from "./containers/home";
+import Home from "./containers/home";
 
 export const App = () => {
   return (

@@ -1,17 +1,29 @@
-import React from 'react';
+import React from "react";
 
-//ui Components
-import { Container } from 'semantic-ui-react'
 //components
-import { Header } from '../components/Header/header';
+import { Header } from "../components/Header/header";
+import { getAllJob } from "../Services/jobAPI";
 
-export const Home =() => {
-  return (
-    <div>
-     <Header></Header>
-      
-    </div>
-  );
+class Home extends React.Component {
+  state = {
+    job: []
+  };
+
+ componentDidMount = async ()=>{
+   const fetchResult = await getAllJob();
+  this.setState({
+    job: fetchResult
+  })
+ }
+
+  render() {
+    console.log(this.state.job)
+    return (
+      <div>
+        <Header></Header>
+      </div>
+    );
+  }
 }
 
-
+export default Home;
