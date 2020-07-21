@@ -1,12 +1,12 @@
-import React from 'react';
+import React from "react";
+//container
+import {Home} from "./containers/home";
 
-
-export const App =() => {
+export const App = () => {
   return (
     <div>
-      <h1>hello</h1>
+      <Home></Home>
     </div>
   );
-}
+};
 
-export default App;
