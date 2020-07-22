@@ -13,13 +13,13 @@ export const Header = () => {
             alt=""
           />
         </Menu.Item>
-        <Menu.Item as="a" className="text">
+        <Menu.Item as="a" className="text" href="https://github.com/Rajangrg/IT-JobSearch-React">
           Source Code
         </Menu.Item>
         <Menu.Item as="a" className="text" href="https://jobs.github.com/api">
           API Details
         </Menu.Item>
-        <Menu.Item as="a" className="text" href="https://jobs.github.com/api">
+        <Menu.Item as="a" className="text" href="https://github.com/Rajangrg/IT-JobSearch-React/blob/master/LICENSE">
           MIT License
         </Menu.Item>
       </Menu>
