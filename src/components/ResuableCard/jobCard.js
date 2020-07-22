@@ -1,11 +1,19 @@
 import React from "react";
 //Ui components
-import { Item, Label, Button, Modal } from "semantic-ui-react";
+import { Item, Label, Button, Modal, Dimmer, Loader } from "semantic-ui-react";
 //React-markdown
 import ReactMarkdown from "react-markdown";
 
-export const JobCard = ({ jobList}) => {
- 
+export const JobCard = ({ jobList, loadingState }) => {
+  if (loadingState) {
+    return (
+      <div>
+        <Dimmer active inverted>
+          <Loader inverted>Loading</Loader>
+        </Dimmer>
+      </div>
+    );
+  }
   //console.log(jobList);
   return (
     <div>
