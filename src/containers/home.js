@@ -3,6 +3,8 @@ import React from "react";
 //components
 import { Header } from "../components/Header/header";
 import { Job } from "../components/Job/job";
+import { SearchJob } from "../components/Form/searchJob";
+
 
 
 class Home extends React.Component {
@@ -12,6 +14,7 @@ class Home extends React.Component {
     return (
       <div>
         <Header></Header>
+        <SearchJob></SearchJob>
         <Job></Job>
       </div>
     );

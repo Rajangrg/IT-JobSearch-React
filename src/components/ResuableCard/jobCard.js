@@ -5,9 +5,10 @@ import { Item, Label, Button, Modal } from "semantic-ui-react";
 import ReactMarkdown from "react-markdown";
 
 export const JobCard = ({ jobList }) => {
-  console.log(jobList);
+  //console.log(jobList);
   return (
     <div>
+      <h3> {jobList.length} jobs found </h3>
       {jobList.map((job) => {
         return (
           <Item.Group key={job.id}>
@@ -28,7 +29,7 @@ export const JobCard = ({ jobList }) => {
                 <Item.Description></Item.Description>
 
                 <Item.Extra>
-                <Modal
+                  <Modal
                     trigger={
                       <Button primary floated="left">
                         Job Description
@@ -65,7 +66,6 @@ export const JobCard = ({ jobList }) => {
                       </Modal.Description>
                     </Modal.Content>
                   </Modal>
-             
                 </Item.Extra>
               </Item.Content>
             </Item>
