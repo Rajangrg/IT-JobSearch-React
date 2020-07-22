@@ -1,6 +1,8 @@
 import React from "react";
-
+//Ui components
 import { Item, Label, Button, Modal } from "semantic-ui-react";
+//React-markdown
+import ReactMarkdown from "react-markdown";
 
 export const JobCard = ({ jobList }) => {
   console.log(jobList);
@@ -23,11 +25,26 @@ export const JobCard = ({ jobList }) => {
                   <Label icon="tag" content={job.type} />
                   <Label icon="globe" content={job.location} />
                 </Item.Extra>
-                <Item.Description>
-                  <p>description need to be trim</p>
-                </Item.Description>
+                <Item.Description></Item.Description>
 
                 <Item.Extra>
+                <Modal
+                    trigger={
+                      <Button primary floated="left">
+                        Job Description
+                      </Button>
+                    }
+                  >
+                    <Modal.Header>Job Description</Modal.Header>
+                    <Modal.Content>
+                      <Modal.Description>
+                        <ReactMarkdown
+                          source={job.description}
+                          escapeHtml={false}
+                        />
+                      </Modal.Description>
+                    </Modal.Content>
+                  </Modal>
                   <Modal
                     trigger={
                       <Button primary floated="left">
@@ -41,9 +58,14 @@ export const JobCard = ({ jobList }) => {
                         <p>
                           If this sounds like you - what are you waiting for??
                         </p>
+                        <ReactMarkdown
+                          source={job.how_to_apply}
+                          escapeHtml={false}
+                        />
                       </Modal.Description>
                     </Modal.Content>
                   </Modal>
+             
                 </Item.Extra>
               </Item.Content>
             </Item>
