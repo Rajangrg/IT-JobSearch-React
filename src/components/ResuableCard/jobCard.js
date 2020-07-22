@@ -4,7 +4,8 @@ import { Item, Label, Button, Modal } from "semantic-ui-react";
 //React-markdown
 import ReactMarkdown from "react-markdown";
 
-export const JobCard = ({ jobList }) => {
+export const JobCard = ({ jobList}) => {
+ 
   //console.log(jobList);
   return (
     <div>

@@ -1,27 +1,48 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { getAllJobApi } from "../../Services/jobAPI";
 import { JobCard } from "../ResuableCard/jobCard";
+import {SearchJob} from '../Form/searchJob';
 
 //UI components
 import { Container } from "semantic-ui-react";
 
-export const Job = () => {
-  const [jobs, setJobs] = useState([]);
+class Job extends React.Component{
+  state = {
+    jobList:[],
+    jobTitle: "",
+    location: "",
+  };
 
-  useEffect(() => {
-    const getJobs = async () => {
-      setJobs(await getAllJobApi());
-    };
-    getJobs();
-  }, [setJobs]);
+  getSearchResult = async (e) => {
+    e.preventDefault();
+    const jobTitle = e.target.elements.title.value;
+    const location = e.target.elements.jobLocation.value;
+    const data = await getAllJobApi(jobTitle, location) 
+    this.setState({
+      jobList: data,
+      jobTitle,
+      location,
+    });
+  };
 
-  //console.log(jobs)
+  componentDidMount = async()=>{
+    const data = await getAllJobApi() 
+    this.setState({
+      jobList: data,  
+    });
+  }
 
-  return (
+ render(){
+   return(
     <div>
-      <Container>
-        <JobCard  jobList={jobs}></JobCard>
-      </Container>
-    </div>
-  );
-};
+    <Container>
+      <SearchJob searchJob={this.getSearchResult}></SearchJob>
+      <JobCard  jobList={this.state.jobList} ></JobCard>
+    </Container>
+  </div>
+   )
+ }
+} 
+ 
+export default Job
+
