@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = `https://thingproxy.freeboard.io/fetch/https://jobs.github.com/positions.json`;
+const BASE_URL = `https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json`;
 
 export const getAllJobApi = async (jobTiltle, location) => {
   let changableUrl = BASE_URL;
