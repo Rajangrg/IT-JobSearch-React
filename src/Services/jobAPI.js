@@ -14,7 +14,7 @@ export const getAllJobApi = async (jobTiltle, location) => {
     .get(changableUrl)
     .then(({ data }) => data)
     .catch((err) => console.error(err));
-    console.log("url" + changableUrl)
+    //console.log("url" + changableUrl)
   return response;
 };
 

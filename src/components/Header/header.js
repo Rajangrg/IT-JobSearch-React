@@ -6,7 +6,7 @@ import "./header.css";
 export const Header = () => {
   return (
     <div className="wrapper">
-      <Menu stackable>
+      <Menu inverted>
         <Menu.Item>
           <img
             src="https://img.icons8.com/cute-clipart/128/000000/github.png"
@@ -18,6 +18,9 @@ export const Header = () => {
         </Menu.Item>
         <Menu.Item as="a" className="text" href="https://jobs.github.com/api">
           API Details
+        </Menu.Item>
+        <Menu.Item as="a" className="text" href="https://jobs.github.com/api">
+          MIT License
         </Menu.Item>
       </Menu>
     </div>
