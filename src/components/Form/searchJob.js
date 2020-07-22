@@ -12,14 +12,14 @@ export const SearchJob = ({ searchJob }) => {
               control="input"
               placeholder="job name"
               name="title"
-              
+              required
             />
             <Form.Field
               label="Location"
               control="input"
               placeholder="location"
               name="jobLocation"
-            
+              required
             />
           </Form.Group>
 
