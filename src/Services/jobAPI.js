@@ -5,7 +5,7 @@ const BASE_URL = `https://thingproxy.freeboard.io/fetch/https://jobs.github.com/
 export const getAllJobApi = async (jobTiltle, location) => {
   let changableUrl = BASE_URL;
   //validation
-  if ( jobTiltle && location) {
+  if (jobTiltle && location) {
     changableUrl = BASE_URL + `?description=${jobTiltle}&location=${location}`;
   }
 

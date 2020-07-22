@@ -3,21 +3,23 @@ import React from "react";
 import {Container, Button, Divider, Form } from 'semantic-ui-react'
 
 
-export const SearchJob = () => {
+export const SearchJob = ({searchJob}) => {
   return (
  <div>
  <Container>
- <Form >
+ <Form onSubmit={searchJob}>
         <Form.Group widths='equal'>
           <Form.Field
             label='Job Title'
             control='input'
             placeholder='job name'
+            name='title'
           />
           <Form.Field
             label='Location'
             control='input'
             placeholder='location'
+            name='jobLocation'
           />
            
         </Form.Group>
